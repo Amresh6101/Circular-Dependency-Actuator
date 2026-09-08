@@ -1,0 +1,5 @@
+- /actuator/health: Displays the health status of the application.
+- /actuator/info: Displays arbitrary application information.
+- /actuator/metrics: Shows ‘metrics’ information for the current application.
+- /actuator/env: Displays properties from the `Environment`.
+- /actuator/beans: Displays a complete list of all Spring beans in your application.
