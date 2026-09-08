@@ -4,6 +4,7 @@ import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 @Service
+@Profile("circular-dependency")
 public class PaymentService {
     private final OrderService orderService;
     // constructor injection
@@ -16,6 +17,7 @@ public class PaymentService {
         System.out.println(
                 "PaymentService: processing payment for order " + orderId
         );
+        // this is the main reason from causing circular dependency
         orderService.markOrderAsPaid(orderId);
         return "Payment successful for order " + orderId;
     }

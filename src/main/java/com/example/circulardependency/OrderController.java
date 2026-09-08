@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api/circular-dependency")
+@Profile("circular-dependency")
 public class OrderController {
 
     private final OrderService orderService;

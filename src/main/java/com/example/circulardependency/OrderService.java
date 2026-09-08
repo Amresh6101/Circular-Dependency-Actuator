@@ -5,6 +5,7 @@ import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 @Service
+@Profile("circular-dependency")
 public class OrderService {
 
     private final PaymentService paymentService;
