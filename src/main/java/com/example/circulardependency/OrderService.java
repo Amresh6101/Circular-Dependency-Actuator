@@ -1,15 +1,15 @@
 package com.example.circulardependency;
 
+import org.springframework.context.annotation.Lazy;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 @Service
-@Profile("circular-Dependency")
 public class OrderService {
 
     private final PaymentService paymentService;
     // constructor injection
-    public OrderService(PaymentService paymentService) {
+    public OrderService( @Lazy PaymentService paymentService) {
         System.out.println("creating OrderService...");
         this.paymentService = paymentService;
     }
